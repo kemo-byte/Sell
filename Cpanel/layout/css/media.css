@@ -1,0 +1,35 @@
+/* Smart Phones And Tablets */
+
+@media (max-width: 767px)
+{
+    .home-stats .stat{
+    margin:auto;
+	margin-bottom:20px;
+    width:80%;
+    }
+}
+
+/* Small Screen */
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .home-stats .stat{
+        margin:auto;
+        margin-bottom:20px;
+        width:80%;
+        }
+}
+
+/* Medium Screen */
+
+@media (min-width:992px) and (max-width: 1199px)
+{
+   
+}
+
+/* Large Screen */
+
+@media (min-width:1200px)
+{
+    
+}

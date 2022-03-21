@@ -1,0 +1,47 @@
+/* Smart Phones And Tablets */
+
+@media (max-width: 767px)
+{
+    .notfound{
+    font-size:100px;
+    }
+    .about{
+        font-size: 35px;
+    }
+    .item-box{
+        margin:auto;
+        width:80%;
+        margin-bottom: 20px;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+        color:#fff;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
+        background-color:#fff;
+        color:#000
+    }
+    .arrow{
+        display:none
+    }
+}
+
+/* Small Screen */
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    
+}
+
+/* Medium Screen */
+
+@media (min-width:992px) and (max-width: 1199px)
+{
+   
+}
+
+/* Large Screen */
+
+@media (min-width:1200px)
+{
+    
+}

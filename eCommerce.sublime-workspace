@@ -1,0 +1,376 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Desci",
+				"Description"
+			],
+			[
+				"sor",
+				"sort_array"
+			],
+			[
+				"descri",
+				"Description"
+			],
+			[
+				"Cate",
+				"Categories"
+			],
+			[
+				"back",
+				"background-size\tproperty"
+			],
+			[
+				"s",
+				"scrollTop"
+			],
+			[
+				"mysql_fetch",
+				"mysql_fetch_assoc"
+			],
+			[
+				"mysql_",
+				"mysqli_fetch_array"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<?php\n\n\t/*\n\t===================================\n\t== \t\tCategories \tpage         ==\n\t===================================\n\t*/\n\t\tob_start();\n\n\t\tsession_start();\n\n\tif( isset($_SESSION['Username']) ){\n\t\t\n\t\t$pageTitle = 'Categories';\n\n\t\tinclude \"init.php\";\n\t\t\n\t\t$do = isset($_GET['do'])? $_GET['do'] : 'manage';\n\n\t\tif($do == 'manage') {\t// manage Members Page\n\n\t\t\t$sort = 'ASC';\n\n\t\t\t$sort_array = array('ASC' , 'DESC');\n\n\t\t\tif(isset($_GET['sort']) && in_array($_GET['sort'], $sort_array)){\n\t\t\t\t$sort = $_GET['sort'];\n\t\t\t}\n\n\t\t\t$stmt = $conn ->prepare(\"SELECT * FROM categories ORDER BY Ordering $sort\");\n\t\t\t$stmt ->execute();\n\n\t\t\t$cats = $stmt ->fetchAll();\n\n\t\t\t?>\n\n\t\t\t<h1 class=\"text-center\">Manage Categories</h1>\n\t\t\t<div class=\"container categories\">\n\n\t\t\t\t<div class=\"panel panel-default\">\n\t\t\t\t\t<div class=\"panel-heading\">Manage Categories\n\t\t\t\t\t\t<div class=\"ordering pull-right\">\n\t\t\t\t\t\t\tOrdering:\n\t\t\t\t\t\t\t<a class=\"<?php if($sort == 'ASC'){echo 'active';} ?>\" href=\"?sort=ASC\"> Asc </a> \n\t\t\t\t\t\t\t<a class=\"<?php if($sort == 'DESC'){echo 'active';} ?>\" href=\"?sort=DESC\"> Desc </a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t<?php\n\n\t\t\t\t\t\t\tforeach($cats as $cat){\n\n\t\t\t\t\t\t\t\techo \"<div class='cat'>\";\n\t\t\t\t\t\t\t\t\techo \"<div class='hidden-buttons'>\";\n\t\t\t\t\t\t\t\t\t\techo \"<a href='categories.php?do=Edit&catid=\" . $cat['ID'] . \"' class='btn btn-primary btn-xs'><i class='fa fa-edit'></i>Edit</a>\";\n\t\t\t\t\t\t\t\t\t\techo \"<a href='categories.php?do=Delete&catid=\" . $cat['ID'] . \"' class='confirm btn btn-danger btn-xs'><i class='fa fa-close'></i>Delete</a>\";\n\t\t\t\t\t\t\t\t\techo \"</div>\";\n\t\t\t\t\t\t\t\t\techo \"<h3>\" . $cat['Name'] . \"</h3>\";\n\t\t\t\t\t\t\t\t\techo \"<p>\" ; if($cat['Description'] == ''){echo 'this is Empty';}else{echo $cat['Description'];} echo \"</p>\";\n\t\t\t\t\t\t\t\t\tif($cat['Visibility'] == 1){echo \"<span class='visibility'>Hidden</span>\";}\n\t\t\t\t\t\t\t\t\tif($cat['Allow_Comment'] == 1){echo \"<span class='commenting'>Comment disabled</span>\";}\n\t\t\t\t\t\t\t\t\tif($cat['Allow_Ads'] == 1){echo \"<span class='advertises'>Ads disabled</span>\";}\n\t\t\t\t\t\t\t\techo \"</div>\";\n\t\t\t\t\t\t\t\techo \"<hr />\";\n\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t?>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<a class=\"add-category btn btn-primary\" href=\"categories.php?do=Add\"><i class=\"fa fa-plus\"></i> Add New Category </a>\n\t\t\t</div>\n\n\t\t\t<?php\n\t\t}elseif($do == 'Add'){  // Add Members Page ?>\n\t\t\t\n\n\t\t\t<h1 class=\"text-center\">Add New Category</h1>\n\n\t\t\t\t<div class=\"container\">\n\n\t\t\t\t\t<form class=\"form-horizontal\" action=\"?do=insert\" method=\"POST\">\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Name</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\t\t\t\t\t\t\t\t<input type=\"text\" name=\"name\" value=\"\" class=\"form-control\" autocomplete=\"off\" required=\"required\" placeholder=\"Name of Category\" />\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Description</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4 \">\n\t\t\t\t\t\t\t\t<input type=\"text \" name=\"description\" class=\" form-control\" placeholder=\"Describe the Category\"/>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Ordering</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\t\t\t\t\t\t\t\t<input type=\"text\" name=\"ordering\" value=\"\" class=\"form-control\" placeholder=\"Number to Arrange The Categories\" />\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Visible</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"vis-yes\" type=\"radio\" name=\"visibility\" value=\"0\" checked /> \n\t\t\t\t\t\t\t\t\t<label for=\"vis-yes\">Yes</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"vis-no\" type=\"radio\" name=\"visibility\" value=\"1\" /> \n\t\t\t\t\t\t\t\t\t<label for=\"vis-no\">No</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Allow Commenting</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"com-yes\" type=\"radio\" name=\"commenting\" value=\"0\" checked /> \n\t\t\t\t\t\t\t\t\t<label for=\"com-yes\">Yes</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"com-no\" type=\"radio\" name=\"commenting\" value=\"1\" /> \n\t\t\t\t\t\t\t\t\t<label for=\"com-no\">No</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Allow Ads</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"ads-yes\" type=\"radio\" name=\"ads\" value=\"0\" checked /> \n\t\t\t\t\t\t\t\t\t<label for=\"ads-yes\">Yes</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"ads-no\" type=\"radio\" name=\"ads\" value=\"1\" /> \n\t\t\t\t\t\t\t\t\t<label for=\"ads-no\">No</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<div class=\"col-sm-offset-2 col-sm-10\">\n\t\t\t\t\t\t\t\t<input type=\"submit\" value=\"Add Category\" class=\"btn btn-primary btn-lg\" />\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t  \t\t\t\t    \n\t\t<?php\n\t\t}elseif($do == 'insert'){ // Insert Member Page\n\n\t\t\t\n\t\t\tif($_SERVER['REQUEST_METHOD'] == 'POST'){\n\t\t\t\t\n\t\t\t\techo \"<h1 class='text-center'>Insert New Category</h1>\";\n\n\t\t\t\techo \"<div class='container'>\";\n\n\t\t\t\t$name \t\t= $_POST['name'];\n\t\t\t\t$desc \t\t= $_POST['description'];\n\t\t\t\t$ordering \t= $_POST['ordering'];\n\t\t\t\t$visible \t= $_POST['visibility'];\n\t\t\t\t$comment \t= $_POST['commenting'];\n\t\t\t\t$ads \t\t= $_POST['ads'];\n\n\t\n\t\t\t\t\t// check if Category Exists in database\n\n\t\t\t\t\t$check = checkItem('Name','categories' , $name);\n\n\t\t\t\t\t// Insert New Category Info in Database\n\t\t\t\t\tif($check == 0){\n\t\t\t\t\t\t$stmt = $conn->prepare(\"INSERT INTO \n\t\t\t\t\t\t\t\tcategories(Name, Description , Ordering , Visibility ,Allow_Comment,  Allow_Ads)\n\t\t\t\t\t\t\t\t\tVALUES(:zname , :zdesc , :zorder , :zvisible ,:zcomment,:zads) \");\n\t\t\t\t\t\t$stmt->execute(array(\n\t\t\t\t\t\t\t'zname'\t\t => $name,\n\t\t\t\t\t\t\t'zdesc' \t => $desc,\n\t\t\t\t\t\t\t'zorder' \t => $ordering,\n\t\t\t\t\t\t\t'zvisible'\t => $visible,\n\t\t\t\t\t\t\t'zcomment' \t => $comment,\n\t\t\t\t\t\t\t'zads'   \t => $ads \n\t\t\t\t\t\t));\n\t\t\t\t\t}else{\n\t\t\t\t\t\t$theMsg = '<div class=\"alert alert-danger\"> This Category is Exists</div>';\n\n\t\t\t\t\t\tredirectHome($theMsg, 'back');\n\t\t\t\t\t}\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t$stmt = $conn->prepare(\"INSERT INTO\tusers (Username,password,Email,FullName)\n\t\t\t\t\t\t\t\t\t\t\t\tVALUES (?,?,?,?)\");\n\t\t\t\t\t\n\t\t\t\t\t// $stmt->execute(array($user, $email, $name, $id));\n\t\t\t\t\t\n\t\t\t\t\t\t$stmt ->execute(array($user, $hashPass,$email, $name));\n\t\t\t\t\t\t*/\n\t\t\t\t\t// echo success message\n\t\t\t\t\techo \"<div class='container'>\";\n\t\t\t\t\t$theMsg = \"<h2 class='alert alert-success'>\" . $stmt ->rowCount() . \" Record Inserted </h2>\";\n\t\t\t\t\tredirectHome($theMsg,'back');\n\n\t\t\t\t\techo \"</div>\";\n\t\t\t\t\n\n\t\t\t}else{\n\t\t\t\techo \"<div class='container'>\";\n\n\t\t\t\t$theMsg = \"<div class='alert alert-danger'>You can't Browse this Page Directly</div>\";\n\t\t\t\tredirectHome($theMsg,'back');\n\n\t\t\t\techo \"</div>\";\n\t\t\t}\n\n\t\t\techo \"</div>\";\n\t\t\n\t\t}elseif($do == 'Edit'){ // Edit Page\n\n\t\t\t// check if Request of catid is numeric & get the integer value of it\n\n\t\t\t$catid = isset($_GET['catid']) && is_numeric($_GET['catid'])?  intval($_GET['catid']) : 0;\n\n\t\t\t// select all data depend on that id\n\n\t\t\t$stmt = $conn ->prepare(\"SELECT * FROM categories WHERE ID = ? \");\n\t\t\t\n\t\t\t// execute the Query\n\n\t\t\t$stmt ->execute(array($catid));\n\t\t\t\n\t\t\t// fetch the data\n\n\t\t\t$cat = $stmt ->fetch();\n\n\t\t\t// Row the data\n\n\t\t\t$count = $stmt ->rowCount();\n\n\t\t\t// if there is such id show the data in the form\n\n\t\t\tif($stmt ->rowCount() > 0){ ?>\n\t\t\t\t\n\t\t\t\t<h1 class=\"text-center\">Edit Category</h1>\n\n\t\t\t\t<div class=\"container\">\n\n\t\t\t\t\t<form class=\"form-horizontal\" action=\"?do=update\" method=\"POST\">\n\t\t\t\t\t\t<input type=\"hidden\" name=\"catid\" value=\"<?php echo $catid ?>\" />\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Name</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\t\t\t\t\t\t\t\t<input type=\"text\" name=\"name\" class=\"form-control\" autocomplete=\"off\" required=\"required\" placeholder=\"Name of Category\" value=\"<?php echo $cat['Name']?>\"/>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Description</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4 \">\n\t\t\t\t\t\t\t\t<input type=\"text\" name=\"description\" class=\" form-control\" placeholder=\"Describe the Category\" value=\"<?php echo $cat['Description']?>\" />\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Ordering</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\t\t\t\t\t\t\t\t<input type=\"text\" name=\"ordering\"  class=\"form-control\" placeholder=\"Number to Arrange The Categories\"  value=\"<?php echo $cat['Ordering']?>\"/>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Visible</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"vis-yes\" type=\"radio\" name=\"visibility\" value=\"0\" <?php if($cat['Visibility'] == 0) echo \"checked\"; ?> /> \n\t\t\t\t\t\t\t\t\t<label for=\"vis-yes\">Yes</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"vis-no\" type=\"radio\" name=\"visibility\" value=\"1\" <?php if($cat['Visibility'] == 1) echo \"checked\"; ?>/> \n\t\t\t\t\t\t\t\t\t<label for=\"vis-no\">No</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Allow Commenting</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"com-yes\" type=\"radio\" name=\"commenting\" value=\"0\" <?php if($cat['Allow_Comment'] == 0) echo \"checked\"; ?> /> \n\t\t\t\t\t\t\t\t\t<label for=\"com-yes\">Yes</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"com-no\" type=\"radio\" name=\"commenting\" value=\"1\" <?php if($cat['Allow_Comment'] == 1) echo \"checked\"; ?>/> \n\t\t\t\t\t\t\t\t\t<label for=\"com-no\">No</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<label class=\"col-sm-2 control-label\">Allow Ads</label>\n\t\t\t\t\t\t\t<div class=\"col-sm-10 col-md-4\">\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"ads-yes\" type=\"radio\" name=\"ads\" value=\"0\"  <?php if($cat['Allow_Ads'] == 0) echo \"checked\"; ?>/> \n\t\t\t\t\t\t\t\t\t<label for=\"ads-yes\">Yes</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t<input id=\"ads-no\" type=\"radio\" name=\"ads\" value=\"1\"<?php if($cat['Allow_Ads'] == 1) echo \"checked\"; ?> /> \n\t\t\t\t\t\t\t\t\t<label for=\"ads-no\">No</label>\n\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"form-group form-group-lg\">\n\t\t\t\t\t\t\t<div class=\"col-sm-offset-2 col-sm-10\">\n\t\t\t\t\t\t\t\t<input type=\"submit\" value=\"Save\" class=\"btn btn-primary btn-lg\" />\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t  \t\t\t\t   \n\t\t\t\n\t\t\t\n\t\t\t\t<?php\n\t\t\t// else show message that there is no such ID\n\n\t\t\t}else{\n\t\t\t\techo \"<div class='container'>\";\n\t\t\t\t$theMsg = \"<div class='alert alert-danger'> there's no such ID </div>\";\n\t\t\t\tredirectHome($theMsg);\n\t\t\t\techo \"</div>\";\n\t\t\t}\n\n\t\t}elseif($do == 'update'){ // update page\n\t\t\n\t\techo \"<h1 class='text-center'>Update Category</h1>\";\n\n\t\t\techo \"<div class='container'>\";\n\t\t\tif($_SERVER['REQUEST_METHOD'] == 'POST'){\n\t\t\t\t\n\t\t\t\t$id \t\t= $_POST['catid'];\n\t\t\t\t$name \t\t= $_POST['name'];\n\t\t\t\t$desc \t\t= $_POST['description'];\n\t\t\t\t$order \t\t= $_POST['ordering'];\n\t\t\t\t$visible \t= $_POST['visibility'];\n\t\t\t\t$comment \t= $_POST['commenting'];\n\t\t\t\t$ads \t\t= $_POST['ads'];\n\n\t\t\t\n\t\t\t\t\t// update Database with the info\n\n\t\t\t\t\t$stmt = $conn->prepare(\"UPDATE \tcategories\n\t\t\t\t\t\t\t\t\t\t\t SET Name=?,\n\t\t\t\t\t\t\t\t\t\t\t \t Description=?,\n\t\t\t\t\t\t\t\t\t\t\t \t Ordering=?,\n\t\t\t\t\t\t\t\t\t\t\t \t Visibility=?,\n\t\t\t\t\t\t\t\t\t\t\t \t Allow_Comment=?,\n\t\t\t\t\t\t\t\t\t\t\t \t Allow_Ads=?\n\t\t\t\t\t\t\t\t\t\t\t WHERE\n\t\t\t\t\t\t\t\t\t\t\t \t ID=? \");\n\t\t\t\t\t\n\t\t\t\t\t// $stmt->execute(array($user, $email, $name, $id));\n\t\t\t\t\t\n\t\t\t\t\t$stmt ->execute(array($name, $desc, $order , $visible, $comment,$ads,$id));\n\t\t\t\t\t\n\t\t\t\t\t// echo success message\n\n\t\t\t\t\t$theMsg = \"<h2 class='alert alert-success'>\" . $stmt ->rowCount() . ' Record Updated </h2>';\n\t\t\t\t\t\n\t\t\t\t\tredirectHome($theMsg,'back',4);\n\t\t\t\t\n\n\t\t\t}else{\n\t\n\t\t\t\t$theMsg = \"<divfg class='alert alert-danger'> You can't Browse this Page Directly </div>\";\n\t\t\t\tredirectHome($theMsg);\n\n\t\t\t}\n\n\t\t\techo \"</div>\";\n\t\t}elseif( $do == 'Delete'){\n\n\t\t\t// Delete Member Page\n\n\t\t\techo \"<h1 class='text-center'>Delete Category</h1>\";\n\n\t\t\techo \"<div class='container'>\";\n\n\t\t\t// check if Request of catid is numeric & get the integer value of it\n\n\t\t\t$catid = isset($_GET['catid']) && is_numeric($_GET['catid'])?  intval($_GET['catid']) : 0;\n\n\t\t\t// select all data depend on that id\n\n\t\t\t$check = checkItem('ID', 'categories' , $catid);\n\n\t\t\t//if there is such id show the data in the form\n\n\t\t\tif($check > 0){\n\t\t\t\t\n\t\t\t\t$stmt = $conn ->prepare(\"DELETE FROM categories Where ID = :zid\");\n\n\t\t\t\t$stmt ->bindParam(\":zid\",$catid);\n\n\t\t\t\t$stmt ->execute();\n\n\n\t\t\t\t$theMsg = \"<div class='alert alert-success'>\" . $stmt ->rowCount() . ' Record Deleted </div>';\n\t\t\t\tredirectHome($theMsg,\"back\");\n\n\t\t\t}else{\n\n\t\t\t\t $theMsg = \"<div class='alert alert-danger' > this ID is not Exist </div>\";\n\t\t\t\t redirectHome($theMsg);\n\t\t\t}\t\n\n\t\t echo \"</div>\";\n\t\t\n\t\t} elseif( $do == \"activate\"){\n\n\t\t\t// Activate Member Page\n\n\t\t\techo \"<h1 class='text-center'>Activate Member</h1>\";\n\n\t\t\techo \"<div class='container'>\";\n\n\t\t\t// check if Request of userid is numeric & get the integer value of it\n\n\t\t\t$userid = isset($_GET['userid']) && is_numeric($_GET['userid'])?  intval($_GET['userid']) : 0;\n\n\t\t\t// select all data depend on that id\n\n\t\t\t$check = checkItem('userid', 'users' , $userid);\n\n\t\t\t//if there is such id show the data in the form\n\n\t\t\tif($check > 0){\n\t\t\t\t\n\t\t\t\t$stmt = $conn ->prepare(\"UPDATE users SET RegStatus = 1 WHERE UserID=?\");\n\n\t\t\t\t$stmt ->execute(array($userid));\n\n\n\t\t\t\t$theMsg = \"<div class='alert alert-success'>\" . $stmt ->rowCount() . ' Record Activated </div>';\n\t\t\t\tredirectHome($theMsg);\n\n\t\t\t}else{\n\n\t\t\t\t $theMsg = \"<div class='alert alert-danger' > this ID is not Exist </div>\";\n\t\t\t\t redirectHome($theMsg);\n\t\t\t}\t\n\n\t\t echo \"</div>\";\n\n\t\t}elseif( $do == 'Delete'){ // Delete page\n\n\n\t\t}include $tpl . \"footer.php\";\n\n\t}else{\n\n\t\theader('location: index.php');\n\t\texit();\n\t}\n\tob_end_flush();\n?>",
+			"file": "admin/categories.php",
+			"file_size": 14894,
+			"file_write_time": 132152937010800000,
+			"settings":
+			{
+				"buffer_size": 14030,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "admin/copy_templete.php",
+			"settings":
+			{
+				"buffer_size": 792,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "admin/members.php",
+			"settings":
+			{
+				"buffer_size": 13701,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "admin/layout/css/style.css",
+			"settings":
+			{
+				"buffer_size": 5136,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/eCommerce",
+		"/C/xampp/htdocs/eCommerce/admin"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/eCommerce/eCommerce.sublime-project",
+		"/C/xampp/htdocs/a.py",
+		"/C/xampp/htdocs/eCommerce/admin/includes/templetes/navbar.php",
+		"/C/xampp/htdocs/eCommerce/admin/layout/css/style.css",
+		"/C/xampp/htdocs/eCommerce/admin/dashboard.php",
+		"/C/xampp/htdocs/eCommerce/admin/includes/functions/functions.php",
+		"/C/xampp/htdocs/eCommerce/admin/logout.php",
+		"/C/xampp/htdocs/khamsat/first/navbar.php",
+		"/D/2- webDiiv/GetHub_Elzero _Web_School/Bootstrap4DesignOne-master/index.html",
+		"/D/2- webDiiv/GetHub_Elzero _Web_School/Bootstrap3DesignOne-master/js/plugins.js",
+		"/C/xampp/htdocs/eCommerce/admin/includes/languages/english.php",
+		"/D/2- webDiiv/GetHub_Elzero _Web_School/Bootstrap3DesignOne-master/index.html",
+		"/C/xampp/htdocs/z-practice/index.php",
+		"/C/xampp/htdocs/coins/stackoverlow ; coupon .php",
+		"/D/2- webDiiv/الدورات/Form Preview/Form Preview/3/css/style.css",
+		"/D/2- webDiiv/الدورات/Form Preview/Form Preview/3/index.html",
+		"/D/2- webDiiv/الدورات/Form Preview/Form Preview/2/index.html"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" \t\t=",
+			"Category",
+			" ."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "admin/categories.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14030,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1620,
+								1620
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 733.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "admin/copy_templete.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "admin/members.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6048.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "admin/layout/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "eCommerce.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

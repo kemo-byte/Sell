@@ -1,0 +1,777 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Des",
+				"DESC"
+			],
+			[
+				"fa",
+				"fa-suitcase"
+			],
+			[
+				"selc",
+				"user-select"
+			],
+			[
+				"if",
+				"elif"
+			],
+			[
+				"un",
+				"unique"
+			],
+			[
+				"Ma",
+				"Marketing"
+			],
+			[
+				"tr",
+				"try"
+			],
+			[
+				"p",
+				"php"
+			],
+			[
+				"aut",
+				"Auth"
+			],
+			[
+				"li",
+				"li"
+			],
+			[
+				"Req",
+				"req1"
+			],
+			[
+				"doc",
+				"doc_s"
+			],
+			[
+				"Exc",
+				"Exception"
+			],
+			[
+				"qu",
+				"quesion"
+			],
+			[
+				"questi",
+				"question"
+			],
+			[
+				"que",
+				"Question"
+			],
+			[
+				"ca",
+				"categories"
+			],
+			[
+				"uc",
+				"ucwords()"
+			],
+			[
+				"t",
+				"timestamps"
+			],
+			[
+				"va",
+				"vaidateRequest"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"pho",
+				"photo"
+			],
+			[
+				"equest",
+				"request"
+			],
+			[
+				"cate",
+				"category_id"
+			],
+			[
+				"file_get",
+				"file_get_contents()"
+			],
+			[
+				"Mo",
+				"ModelNotFoundException"
+			],
+			[
+				"assert",
+				"assertStatus"
+			],
+			[
+				"Fa",
+				"Facades"
+			],
+			[
+				"File",
+				"file()"
+			],
+			[
+				"thr",
+				"throw"
+			],
+			[
+				"marg",
+				"margin-bottom\tproperty"
+			],
+			[
+				"gl",
+				"glyphicon-chevron-right"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"git ",
+				"Set Syntax: Git Ignore"
+			],
+			[
+				"",
+				"Arithmetic"
+			],
+			[
+				"splite",
+				"File: Split View"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Function"
+			],
+			[
+				"inde",
+				"Indentation: Detect"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"install package control",
+				"Package Control: Install Package"
+			],
+			[
+				"install pacage",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				" Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rout",
+				"Set Syntax: Rd (R Documentation)"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+			"terminal",
+			"php artisan test",
+			"php artisan serve"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/kemobyte/valet/sell/r",
+		"/home/kemobyte/valet/ec/index.php",
+		"/home/kemobyte/valet/ec/layout/js/front-plugin.js",
+		"/home/kemobyte/valet/ec/fetch_user.php",
+		"/home/kemobyte/valet/ec/includes/functions/functions.php",
+		"/home/kemobyte/valet/ec/login.php",
+		"/home/kemobyte/valet/ec/profile.php",
+		"/home/kemobyte/valet/ec/Cpanel/index.php",
+		"/home/kemobyte/Desktop/emam/composer.lock",
+		"/home/kemobyte/valet/fresh/.env",
+		"/media/kemobyte/4C1E8E071E8DEA72/Users/KemoByte/Videos/desktop.ini",
+		"/home/kemobyte/Desktop/docs-9.x/documentation.md",
+		"/home/kemobyte/Downloads/unetbootin-linux64-702.bin",
+		"/home/kemobyte/valet/fresh/.gitattributes",
+		"/home/kemobyte/valet/fresh/.gitignore",
+		"/home/kemobyte/valet/priceline/priceline project re2/css/mainStyle.css",
+		"/home/kemobyte/valet/priceline/priceline project re2/index.html",
+		"/home/kemobyte/sqlitee/a.sqlite",
+		"/home/kemobyte/Documents/Todo/ttyrecord",
+		"/home/kemobyte/valet/priceline/priceline project re/index.html",
+		"/home/kemobyte/valet/priceline/priceline project re/css/mainStyle.css",
+		"/home/kemobyte/valet/priceline/priceline project/css/mainStyle.css",
+		"/home/kemobyte/valet/priceline/priceline project/index.html",
+		"/home/kemobyte/shell_script/profile.txt",
+		"/home/kemobyte/valet/priceline/priceline project/css/all.min.css",
+		"/home/kemobyte/shell_script/shellif.sh",
+		"/home/kemobyte/welcome.sh",
+		"/home/kemobyte/scope.sh",
+		"/home/kemobyte/read.sh",
+		"/home/kemobyte/shellif.sh",
+		"/home/kemobyte/shellif",
+		"/home/kemobyte/Desktop/Br/.env",
+		"/home/kemobyte/Desktop/Br/routes/web.php",
+		"/home/kemobyte/Desktop/Br/resources/views/emoji.blade.php",
+		"/home/kemobyte/Desktop/Br/config/database.php",
+		"/home/kemobyte/Desktop/Br/app/Http/Controllers/Auth/NewPasswordController.php",
+		"/home/kemobyte/Desktop/Br/vendor/laravel/framework/src/Illuminate/Auth/Events/PasswordReset.php",
+		"/etc/php/8.0/cli/php.ini",
+		"/etc/php/7.4/cli/php.ini",
+		"/etc/php/8.0/apache2/php.ini",
+		"/etc/php/7.4/apache2/php.ini",
+		"/etc/php/8.1/apache2/php.ini",
+		"/home/kemobyte/Desktop/Br/resources/views/layouts/app.blade.php",
+		"/home/kemobyte/Desktop/Br/resources/views/dashboard.blade.php",
+		"/home/kemobyte/Desktop/Br/resources/views/layouts/guest.blade.php",
+		"/home/kemobyte/Desktop/alexlaravel/database/database.sqlite",
+		"/home/kemobyte/valet/blog1/vendor/fakerphp/faker/src/Faker/Provider/HtmlLorem.php",
+		"/home/kemobyte/Desktop/emam/config/auth.php",
+		"/home/kemobyte/Desktop/emam/app/Http/Middleware/CheckPassword.php",
+		"/home/kemobyte/Desktop/alexlaravel/public/.htaccess",
+		"/home/kemobyte/valet/blog1/resources/views/components/form/input.blade.php",
+		"/home/kemobyte/valet/blog1/vendor/symfony/console/Input/Input.php",
+		"/home/kemobyte/valet/ec/.htaccess",
+		"/opt/lampp/htdocs/eC/Cpanel/.htaccess",
+		"/opt/lampp/htdocs/eC/index.php",
+		"/opt/lampp/htdocs/eC/Cpanel/includes/functions/functions.php",
+		"/opt/lampp/htdocs/eC/includes/functions/functions.php",
+		"/opt/lampp/htdocs/eC/login.php",
+		"/home/kemobyte/Desktop/emam/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php",
+		"/home/kemobyte/Desktop/emam/vendor/laravel/framework/src/Illuminate/Auth/DatabaseUserProvider.php",
+		"/home/kemobyte/Desktop/emam/vendor/laravel/framework/src/Illuminate/Database/ConnectionInterface.php",
+		"/home/kemobyte/Desktop/emam/vendor/symfony/http-kernel/Event/ControllerEvent.php",
+		"/home/kemobyte/Desktop/emam/vendor/fakerphp/faker/src/Faker/Provider/Image.php",
+		"/home/kemobyte/Desktop/emam/app/Models/User.php",
+		"/home/kemobyte/Desktop/emam/resources/views/index.blade.php",
+		"/home/kemobyte/.config/sublime-text-3/Packages/Phpcs/phpcs.sublime-settings",
+		"/home/kemobyte/Desktop/emam/app/Models/Mail.php",
+		"/home/kemobyte/.config/sublime-text-3/Packages/User/All Autocomplete.sublime-settings",
+		"/home/kemobyte/.config/sublime-text-3/Packages/All Autocomplete/All Autocomplete.sublime-settings",
+		"/home/kemobyte/Desktop/Ecommerce-master/config/constants.php",
+		"/home/kemobyte/Desktop/Ecommerce-master/admin/templates/top.php",
+		"/home/kemobyte/Desktop/Ecommerce-master/db.php",
+		"/home/kemobyte/Desktop/Ecommerce-master/admin/classes/Database.php",
+		"/home/kemobyte/Desktop/Ecommerce-master/admin/js/main.js",
+		"/home/kemobyte/Desktop/emam/app/Http/Controllers/Api/Traits/GeneralTrait.php",
+		"/home/kemobyte/Desktop/emam/vendor/tymon/jwt-auth/src/Contracts/JWTSubject.php",
+		"/home/kemobyte/Desktop/emam/app/Http/Controllers/Api/Admin/AuthController.php",
+		"/home/kemobyte/Desktop/alexlaravel/composer.lock",
+		"/home/kemobyte/Desktop/alexlaravel/composer.json",
+		"/home/kemobyte/Desktop/Liveware/vendor/composer/installed.php",
+		"/home/kemobyte/Desktop/alexlaravel/config/app.php",
+		"/home/kemobyte/Desktop/alexlaravel/vendor/laravel-debugbar/composer.json",
+		"/home/kemobyte/Desktop/alexlaravel/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php",
+		"/home/kemobyte/Desktop/alexlaravel/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
+		"/home/kemobyte/Desktop/alexlaravel/vendor/laravel/sanctum/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php",
+		"/home/kemobyte/Desktop/alexlaravel/config/database.php",
+		"/home/kemobyte/Desktop/alexlaravel/.env",
+		"/home/kemobyte/Desktop/alexlaravel/routes/web.php",
+		"/home/kemobyte/Desktop/alexlaravel/resources/views/posts/index.blade.php",
+		"/home/kemobyte/Desktop/alexlaravel/resources/views/layout/app.blade.php",
+		"/home/kemobyte/Desktop/alexlaravel/resources/views/welcome.blade.php",
+		"/home/kemobyte/Desktop/alexlaravel/app/Models/User.php",
+		"/home/kemobyte/Desktop/alexlaravel/tests/Unit/ExampleTest.php",
+		"/home/kemobyte/Desktop/emam/composer.json",
+		"/home/kemobyte/composer.lock",
+		"/home/kemobyte/Desktop/Liveware/app/Http/Livewire/Counter.php",
+		"/home/kemobyte/Desktop/Liveware/routes/web.php",
+		"/home/kemobyte/Desktop/Liveware/resources/views/livewire/counter.blade.php",
+		"/home/kemobyte/Desktop/Liveware/public/tailwind.min.css",
+		"/home/kemobyte/Desktop/Liveware/app/Http/Livewire/Go.php",
+		"/home/kemobyte/Desktop/Liveware/composer.json",
+		"/home/kemobyte/Desktop/Liveware/composer.lock",
+		"/home/kemobyte/Desktop/template-php-mvc-pdo-bootstrap-jquery-master/views/js/functions.js",
+		"/home/kemobyte/Desktop/template-php-mvc-pdo-bootstrap-jquery-master/views/index.php",
+		"/home/kemobyte/Desktop/template-php-mvc-pdo-bootstrap-jquery-master/views/header.php",
+		"/home/kemobyte/Desktop/template-php-mvc-pdo-bootstrap-jquery-master/config/properties.php",
+		"/home/kemobyte/Desktop/template-php-mvc-pdo-bootstrap-jquery-master/index.php",
+		"/home/kemobyte/Desktop/template-php-mvc-pdo-bootstrap-jquery-master/config/BDConfig.php",
+		"/home/kemobyte/.config/sublime-text-3/Packages/User/laravel.sublime-snippet",
+		"/home/kemobyte/.config/sublime-text-3/Packages/PHP.sublime-package",
+		"/home/kemobyte/.config/sublime-text-3/Packages/ActionScript.sublime-package",
+		"/home/kemobyte/Desktop/tests/vendor/symfony/console/Terminal.php",
+		"/home/kemobyte/Desktop/tests/resources/views/welcome.blade.php",
+		"/home/kemobyte/.config/sublime-text-3/Packages/User/PHP Companion.sublime-settings",
+		"/home/kemobyte/Desktop/tests/app/Http/Controllers/Question.php",
+		"/home/kemobyte/Desktop/tests/routes/web.php",
+		"/home/kemobyte/Desktop/tests/tests/Feature/TagParserTest.php",
+		"/home/kemobyte/Desktop/emam/app/Providers/AppServiceProvider.php",
+		"/home/kemobyte/valet/laravelqueue/config/queue.php",
+		"/home/kemobyte/valet/laravelqueue/app/Jobs/Deploy.php",
+		"/home/kemobyte/valet/laravelqueue/tests/Feature/ExampleTest.php",
+		"/home/kemobyte/valet/laravelqueue/storage/logs/laravel.log",
+		"/home/kemobyte/valet/blog1/tests/Unit/ExampleTest.php",
+		"/home/kemobyte/valet/blog1/app/View/Components/category_dropdown.php",
+		"/home/kemobyte/valet/blog1/resources/views/components/category_dropdown.blade.php",
+		"/home/kemobyte/valet/blog1/app/View/Components/category-dropdown.php",
+		"/home/kemobyte/valet/blog1/resources/views/components/category.blade.php",
+		"/home/kemobyte/valet/blog1/resources/views/posts/index.blade.php"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 116.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 38.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pro",
+				"profile.php"
+			],
+			[
+				"login",
+				"login.php"
+			],
+			[
+				"chartj",
+				"app/Http/Controllers/ChartJsController.php"
+			],
+			[
+				"route/we",
+				"routes/web.php"
+			],
+			[
+				"auth",
+				"config/auth.php"
+			],
+			[
+				"check",
+				"app/Http/Middleware/CheckPassword.php"
+			],
+			[
+				"api",
+				"routes/api.php"
+			],
+			[
+				".ht",
+				"public/.htaccess"
+			],
+			[
+				"nav",
+				"Cpanel/includes/templetes/navbar.php"
+			],
+			[
+				"form/input",
+				"resources/views/components/form/input.blade.php"
+			],
+			[
+				"form/error",
+				"resources/views/components/form/error.blade.php"
+			],
+			[
+				"component/input",
+				"resources/views/components/form/input.blade.php"
+			],
+			[
+				"input",
+				"vendor/symfony/console/Input/Input.php"
+			],
+			[
+				"forminput",
+				"resources/views/components/form/input.blade.php"
+			],
+			[
+				"regiter.blade",
+				"resources/views/register/create.blade.php"
+			],
+			[
+				"register",
+				"app/Http/Controllers/RegisterController.php"
+			],
+			[
+				".",
+				".htaccess"
+			],
+			[
+				"function",
+				"includes/functions/functions.php"
+			],
+			[
+				"databasestore",
+				"vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php"
+			],
+			[
+				"     \\Illuminate\\Database\\ConnectionInterface",
+				"vendor/laravel/framework/src/Illuminate/Database/ConnectionInterface.php"
+			],
+			[
+				"illuminate\\databasee",
+				"vendor/laravel/framework/src/Illuminate/Auth/DatabaseUserProvider.php"
+			],
+			[
+				"Controller",
+				"vendor/symfony/http-kernel/Event/ControllerEvent.php"
+			],
+			[
+				"image",
+				"vendor/fakerphp/faker/src/Faker/Provider/Image.php"
+			],
+			[
+				"models/u",
+				"app/Models/User.php"
+			],
+			[
+				"produc",
+				"admin/products.php"
+			],
+			[
+				"Gener",
+				"app/Http/Controllers/Api/Traits/GeneralTrait.php"
+			],
+			[
+				"JWTSUB",
+				"vendor/tymon/jwt-auth/src/Contracts/JWTSubject.php"
+			],
+			[
+				"models/user",
+				"app/Models/User.php"
+			],
+			[
+				"contact",
+				"app/Http/Livewire/ContactForm.php"
+			],
+			[
+				"tail",
+				"public/tailwind.min.css"
+			],
+			[
+				"go.php",
+				"app/Http/Livewire/Go.php"
+			],
+			[
+				"counter",
+				"app/Http/Livewire/Counter.php"
+			],
+			[
+				"terminal",
+				"vendor/symfony/console/Terminal.php"
+			],
+			[
+				"quiz",
+				"app/Http/Controllers/Quiz.php"
+			],
+			[
+				"",
+				"tests/Unit/QuizTest.php"
+			],
+			[
+				"quiz.php",
+				"app/Http/Controllers/Quiz.php"
+			],
+			[
+				"tagpar",
+				"app/Http/Controllers/TagParser.php"
+			],
+			[
+				"routes",
+				"app/Providers/RouteServiceProvider.php"
+			],
+			[
+				"appserve",
+				"app/Providers/AppServiceProvider.php"
+			],
+			[
+				"queue",
+				"config/queue.php"
+			],
+			[
+				"lara",
+				"storage/logs/laravel.log"
+			],
+			[
+				"laravel",
+				"storage/logs/laravel.log"
+			],
+			[
+				"laravel.log",
+				"storage/logs/laravel.log"
+			],
+			[
+				"models/post",
+				"app/Models/Post.php"
+			],
+			[
+				"postcontr",
+				"app/Http/Controllers/PostController.php"
+			],
+			[
+				"_",
+				"resources/views/_posts-header.blade.php"
+			],
+			[
+				"route/web",
+				"routes/web.php"
+			],
+			[
+				"post.bla",
+				"resources/views/post.blade.php"
+			],
+			[
+				"card",
+				"resources/views/components/post-card.blade.php"
+			],
+			[
+				"feature bla",
+				"resources/views/components/post-featured-card.blade.php"
+			],
+			[
+				"postfac",
+				"database/factories/PostFactory.php"
+			],
+			[
+				"featch",
+				"resources/views/components/post-featured-card.blade.php"
+			],
+			[
+				"postfa",
+				"database/factories/PostFactory.php"
+			],
+			[
+				"dropdon",
+				"resources/views/components/dropdown.blade.php"
+			],
+			[
+				"layout",
+				"resources/views/components/layout.blade.php"
+			],
+			[
+				"view/post",
+				"resources/views/post.blade.php"
+			],
+			[
+				"web",
+				"webpack.mix.js"
+			],
+			[
+				"model/bo",
+				"app/Models/Book.php"
+			],
+			[
+				"Books",
+				"app/Http/Controllers/BooksController.php"
+			],
+			[
+				"authenticationE",
+				"vendor/laravel/framework/src/Illuminate/Auth/AuthenticationException.php"
+			],
+			[
+				"authentica",
+				"vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php"
+			],
+			[
+				"handler",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php"
+			],
+			[
+				"authenticate",
+				"vendor/laravel/framework/src/Illuminate/Auth/Authenticatable.php"
+			],
+			[
+				"authent",
+				"app/Http/Middleware/Authenticate.php"
+			],
+			[
+				"getmail",
+				"app/Http/Controllers/Api/GetMailController.php"
+			],
+			[
+				"http",
+				"vendor/symfony/http-kernel/HttpKernel.php"
+			],
+			[
+				"kern",
+				"app/Console/Kernel.php"
+			],
+			[
+				"aut",
+				"config/auth.php"
+			],
+			[
+				"config",
+				"vendor/league/flysystem/src/Config.php"
+			],
+			[
+				"GetMailController",
+				"app/Http/Controllers/Api/GetMailController.php"
+			],
+			[
+				"GeneralT",
+				"app/Http/Controllers/Api/Traits/GeneralTrait.php"
+			],
+			[
+				"hash",
+				"vendor/laravel/framework/src/Illuminate/Support/Facades/Hash.php"
+			],
+			[
+				"configauth",
+				"config/auth.php"
+			],
+			[
+				"authcon",
+				"app/Http/Controllers/Api/Admin/AuthController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 314.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
